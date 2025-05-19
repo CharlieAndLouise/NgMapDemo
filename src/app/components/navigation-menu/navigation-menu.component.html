@@ -1,0 +1,17 @@
+<div id="container">
+  @for (item of fullMenuItems(); track item.id) {
+    <button mat-button [matMenuTriggerFor]="menu"
+      class="menu-button-class"
+      [disableRipple]="true">
+      {{item.label}}
+    </button>
+    <mat-menu #menu="matMenu">
+      @for (subItem of item.children; track subItem.id) {
+        <div mat-menu-item [disableRipple]="true"
+          (click)="subItem.click && subItem.click(subItem.id)"
+          class="menu-item-class">{{subItem.label}}
+        </div>
+      }      
+    </mat-menu>
+  }
+</div>

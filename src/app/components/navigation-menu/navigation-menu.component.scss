@@ -1,0 +1,47 @@
+@use '@angular/material' as mat;
+
+#container {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  background-color: #b2b1b0;
+  padding: 0px 15px 0px 15px;
+}
+
+.menu-button-class {
+  @include mat.button-overrides((
+    text-label-text-color: #111111,
+    text-label-text-size: 16px,
+    text-container-height: 22px,
+  ));
+  border-radius: 0;
+  margin: 0;
+}
+
+.menu-button-class:hover {
+  @include mat.button-overrides((
+    text-label-text-color: #ffffff,    
+    text-hover-state-layer-opacity: 1,
+  ));
+}
+
+.menu-item-class {
+  @include mat.menu-overrides((
+    item-label-text-line-height: 22px,
+    item-label-text-size: 14px,
+    item-label-text-color: #111111,
+  ));
+
+  height: 22px;
+  min-height: 22px;
+}
+.menu-item-class:hover {
+  @include mat.menu-overrides((
+    item-label-text-color: #ffffff,
+    item-icon-color: #ffffff,
+
+  ));
+  //background-color: var(--mat-system-primary)!important;
+  background-color: var(--mat-sys-on-primary-container) !important;
+}
